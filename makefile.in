@@ -1,13 +1,5 @@
-all: cnf2xnf xnf2cnf xnf2cnf3 xnf2cnf4 xnf2cnf5 extor
+all: cnf2xnf extor
 cnf2xnf: cnf2xnf.c makefile
-	@COMPILE@ -o $@ $<
-xnf2cnf: xnf2cnf.c makefile
-	@COMPILE@ -o $@ $<
-xnf2cnf3: xnf2cnf3.c makefile
-	@COMPILE@ -o $@ $<
-xnf2cnf4: xnf2cnf4.c makefile
-	@COMPILE@ -o $@ $<
-xnf2cnf5: xnf2cnf5.c makefile
 	@COMPILE@ -o $@ $<
 extor: extor.c makefile
 	@COMPILE@ -o $@ $<
