@@ -1,4 +1,12 @@
-all: cnf2xnf extor
+all: cnf2xnf extor xnf2cnf3 xnf2cnf4 xnf2cnf5 xnf2cnf
+xnf2cnf3: xnf2cnf3.c makefile
+	@COMPILE@ -o $@ $<
+xnf2cnf4: xnf2cnf4.c makefile
+	@COMPILE@ -o $@ $<
+xnf2cnf5: xnf2cnf5.c makefile
+	@COMPILE@ -o $@ $<
+xnf2cnf: xnf2cnf.c makefile
+	@COMPILE@ -o $@ $<
 cnf2xnf: cnf2xnf.c makefile
 	@COMPILE@ -o $@ $<
 extor: extor.c makefile
@@ -8,5 +16,6 @@ test: cnf2xnf
 indent:
 	indent cnf2xnf.c
 clean:
-	rm -f makefile cnf2xnf extor cnfs/*.xnf cnfs/*.log cnfs/*.err *~
+	rm -f cnf2xnf extor xnf2cnf3 xnf2cnf4 xnf2cnf5 xnf2cnf
+	rm -f makefile cnfs/*.xnf cnfs/*.log cnfs/*.err *~
 .PHONY: test indent clean
